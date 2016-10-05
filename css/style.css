@@ -1,0 +1,142 @@
+@import 'https://fonts.googleapis.com/css?family=Lato:100,300,400,700&subset=latin-ext';
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: Lato;
+    font-size: 1em;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.stopwatch {
+    display: flex;
+    justify-content: center;
+    font-size: 16vw;
+    color: #222;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin: 2em 0;
+}
+
+.button {
+    display: inline-block;
+    padding: 1em 1.1em;
+    font-size: 2em;
+    margin: .3em;
+    border-radius: 50%;
+    line-height: 1;
+    color: white;
+    transition: background .3s;
+    margin: 0 .5em;
+}
+
+@media (max-width: 800px) {
+    .stopwatch {
+        margin: .5em;
+    }
+
+    .buttons {
+        margin: 1em 0;
+    }
+
+    .button {
+        font-size: 1.5em;
+    }
+}
+
+.button:hover {
+    cursor: pointer;
+    transition: background .3s;
+}
+
+.button--play {
+    background: #77cf22;
+}
+
+.button--play:hover {
+    background: #77bf22;
+}
+
+.button--play:after {
+    content: '\25B6';
+}
+
+.button--stop {
+    background: #ee0000;
+}
+
+.button--stop:hover {
+    background: #cc0000;
+}
+
+.button--stop:after {
+    content: '\23F9';
+}
+
+.button--reset {
+    background: #bbb;
+    border-radius: 10px;
+}
+
+.button--reset:hover {
+    background: #ccc;
+}
+
+.button--disabled,
+.button--disabled:hover {
+    background: #eee;
+}
+
+.button--disabled:hover {
+    cursor: not-allowed;
+}
+
+.reset-list {
+    max-width: 980px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1em;
+    box-sizing: border-box;
+}
+
+.reset-list__item {
+    border-top: 1px solid #dfdfdf;
+    font-size: 2em;
+    line-height: 1.8;
+    color: #000;
+}
+
+.reset-list__item:last-child {
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.acknowledgements {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 1em;
+    text-align: center;
+    color: #aaa;
+    padding: 1em 0;
+    flex-grow: 1;
+}
+
+.acknowledgements__anchor {
+    color: #555;
+    text-decoration: none;
+}
+
+.acknowledgements__anchor:hover {
+    color: #333;
+}
