@@ -57,7 +57,7 @@ $(document).ready(function() {
         let item = $('<div class="reset-list__item"></div>');
         let itemText = getFormattedString(moment.duration(lastDuration + lastDuration - lastDuration));
         item.text(itemText);
-        $('.reset-list').append(item);
+        $('.reset-list').prepend(item);
     }
 
     function getTime() {
