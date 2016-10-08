@@ -44,9 +44,8 @@ $(document).ready(function() {
 
     function resetStopwatch() {
         if (!hasReset) {
-            stopwatchText.text('00:00:00.000');
-
             addLastTimeToList();
+            stopwatchText.text('00:00:00.000');
 
             lastDuration = moment.duration(0);
             hasReset = true;
@@ -55,7 +54,7 @@ $(document).ready(function() {
 
     function addLastTimeToList() {
         let item = $('<div class="reset-list__item"></div>');
-        let itemText = getFormattedString(moment.duration(lastDuration + lastDuration - lastDuration));
+        let itemText = stopwatchText.text();
         item.text(itemText);
         $('.reset-list').prepend(item);
     }
