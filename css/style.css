@@ -69,7 +69,7 @@ body {
 }
 
 .button--play:after {
-    content: '\25B6';
+    content: '⯈';
 }
 
 .button--stop {
@@ -81,7 +81,7 @@ body {
 }
 
 .button--stop:after {
-    content: '\23F9';
+    content: '■';
 }
 
 .button--reset {
