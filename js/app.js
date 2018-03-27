@@ -22,7 +22,6 @@ $(document).ready(function() {
     });
 
     function startOrPauseStopwatch() {
-        hasReset = false;
         $this = $('.button--run');
 
         if ($this.hasClass('button--play')) {
@@ -31,6 +30,7 @@ $(document).ready(function() {
 
             $this.removeClass('button--play');
             $this.addClass('button--stop');
+            hasReset = true;
         } else {
             clearInterval(stopwatch);
             lastDuration = lastDuration + moment.duration(Date.now() - startDate);
@@ -43,12 +43,12 @@ $(document).ready(function() {
     }
 
     function resetStopwatch() {
-        if (!hasReset) {
+        if (hasReset && $('.button--run').hasClass('button--play')) {
             addLastTimeToList();
             stopwatchText.text('00:00:00.000');
 
             lastDuration = moment.duration(0);
-            hasReset = true;
+            hasReset = false;
         }
     }
 
@@ -67,8 +67,6 @@ $(document).ready(function() {
     }
 
     function stopwatchFunction() {
-
-
         stopwatchText.text(getTime());
     }
 
